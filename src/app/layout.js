@@ -2,6 +2,7 @@ import { Inter, Mr_Dafoe } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || 'https://tuffside.com'} />
       </head>
       <body className={`${inter.variable} ${mrDafoe.variable}`}>
+        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />
