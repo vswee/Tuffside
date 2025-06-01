@@ -32,10 +32,12 @@
   font-size: 0.875rem;
   color: var(--color-grey);
   display: block;
-  margin-top: -0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+margin-top: -0.5rem;
+  font-size: .65rem;
+  display: block;
+  font-weight: 800;
+  margin-left: 3rem;}
 
 .nav {
   display: flex;
@@ -151,7 +153,7 @@
   }
 
   .tagline {
-    font-size: 0.75rem;
+    /* font-size: 0.75rem; */
   }
 }
 

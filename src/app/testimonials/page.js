@@ -9,7 +9,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: "TS001",
-      name: "Marcus Thompson",
+      name: "Marcus T.",
       vehicle: "2018 Toyota Hilux",
       service: "Diesel Engine Repair",
       rating: 5,
@@ -19,17 +19,17 @@ export default function Testimonials() {
     },
     {
       id: "TS002", 
-      name: "Sarah Mohammed",
+      name: "Sarah M.",
       vehicle: "2020 Honda Civic",
       service: "General Servicing",
       rating: 5,
       date: "October 2024",
       review: "Professional service from start to finish. They explained everything they were doing and why. My car runs like new again. The staff is friendly and the prices are very reasonable. Highly recommended!",
-      location: "San Fernando"
+      location: "Oropouche"
     },
     {
       id: "TS003",
-      name: "David Chen",
+      name: "David C.",
       vehicle: "2016 Nissan Frontier",
       service: "Emergency Roadside",
       rating: 5,
@@ -39,17 +39,17 @@ export default function Testimonials() {
     },
     {
       id: "TS004",
-      name: "Jennifer Williams",
+      name: "Jennifer W.",
       vehicle: "2019 Suzuki Swift",
       service: "Brake Repair",
       rating: 5,
       date: "September 2024",
       review: "Had brake problems and was worried about safety. Tuffside took care of everything quickly and thoroughly. They even showed me the old parts and explained what was wrong. Great customer service!",
-      location: "Arima"
+      location: "Siparia"
     },
     {
       id: "TS005",
-      name: "Robert Singh",
+      name: "Robert S.",
       vehicle: "2017 Ford Ranger",
       service: "Engine Tuning",
       rating: 5,
@@ -59,7 +59,7 @@ export default function Testimonials() {
     },
     {
       id: "TS006",
-      name: "Lisa Rodriguez",
+      name: "Lisa R.",
       vehicle: "2015 Hyundai Elantra",
       service: "Electrical Diagnostics",
       rating: 5,
@@ -105,7 +105,7 @@ export default function Testimonials() {
               <p>Average Rating</p>
             </div>
             <div className={styles.statCard}>
-              <h3>15+</h3>
+              <h3>10+</h3>
               <p>Years Experience</p>
             </div>
           </div>

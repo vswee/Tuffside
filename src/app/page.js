@@ -1,5 +1,6 @@
 import CTAButtons from '@/components/CTAButtons';
 import styles from './page.module.css';
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
+            <Image className={styles.heroImage} src="/images/call-card-graphic.webp" alt="Tuffside Automotive Garage Logo"
+              width={1000}
+              height={501}/>
             <div className={styles.heroText}>
               <h1 className={styles.heroTitle}>
                 Tuffside
@@ -15,17 +19,11 @@ export default function Home() {
               </h1>
               <p className={styles.heroTagline}>Built to Last. Tuned to Perform.</p>
               <p className={styles.heroDescription}>
-                Professional automotive repair and maintenance services in Trinidad.
-                Expert diagnostics, diesel repair, engine tuning, and suspension work
+                Professional automotive repair and maintenance services in South Trinidad.
+                Diagnostics, heavy diesel repair, engine tuning, and suspension work
                 with honest, reliable service you can trust.
               </p>
               <CTAButtons layout="horizontal" size="large" />
-            </div>
-            <div className={styles.heroImage}>
-              <div className={styles.logoPlaceholder}>
-                <h2>TUFFSIDE</h2>
-                <p>AUTOMOTIVE</p>
-              </div>
             </div>
           </div>
         </div>
@@ -38,18 +36,18 @@ export default function Home() {
           <div className="grid grid-3">
             <div className={styles.serviceCard}>
               <div className={styles.serviceIcon}>🔧</div>
-              <h3>Engine Diagnostics</h3>
+              <h3>Diagnostics</h3>
               <p>Advanced diagnostic tools to identify and resolve engine issues quickly and accurately.</p>
             </div>
             <div className={styles.serviceCard}>
               <div className={styles.serviceIcon}>⚙️</div>
               <h3>Diesel Repair</h3>
-              <p>Specialized diesel engine repair and maintenance for trucks, buses, and heavy machinery.</p>
+              <p>Specialised diesel engine repair and maintenance for trucks, and heavy machinery.</p>
             </div>
             <div className={styles.serviceCard}>
               <div className={styles.serviceIcon}>🏁</div>
               <h3>Engine Tuning</h3>
-              <p>Performance tuning and optimization to get the best out of your vehicle's engine.</p>
+              <p>Performance tuning, modification and optimisation to get the best out of your vehicle's engine.</p>
             </div>
           </div>
           <div className="text-center mt-lg">
@@ -67,15 +65,14 @@ export default function Home() {
             <div className={styles.whyText}>
               <h2>Why Choose Tuffside?</h2>
               <ul className={styles.whyList}>
-                <li>✓ Over 15 years of automotive experience</li>
+                <li>✓ Over 10 years of automotive experience</li>
                 <li>✓ Honest, transparent pricing</li>
                 <li>✓ Quick turnaround times</li>
                 <li>✓ Emergency and on-site services</li>
-                <li>✓ Friendly, professional service</li>
-                <li>✓ All work guaranteed</li>
+                <li>✓ Friendly service</li>
               </ul>
               <p>
-                We're not just another garage - we're your neighbors who care about
+                We're not just another garage - we're your neighbours who care about
                 keeping you safely on the road. Every job, big or small, gets our
                 full attention and expertise.
               </p>

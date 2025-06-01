@@ -113,6 +113,7 @@
 }
 
 .benefitCard h4 {
+  font-family: var(--font-sans);
   color: var(--color-red);
   margin-bottom: var(--spacing-sm);
   font-size: 1.25rem;

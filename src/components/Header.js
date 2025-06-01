@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,12 +25,14 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className={styles.nav}>
-            <Link href="/" className={styles.navLink}>Home</Link>
-            <Link href="/about" className={styles.navLink}>About</Link>
-            <Link href="/services" className={styles.navLink}>Services</Link>
-            <Link href="/bookings" className={styles.navLink}>Bookings</Link>
-            <Link href="/testimonials" className={styles.navLink}>Testimonials</Link>
-            <Link href="/contact" className={styles.navLink}>Contact</Link>
+            {/* {pathname !== '/' && (
+              <Link href="/" className={styles.navLink}>Home</Link>
+            )} */}
+            {pathname !== '/about' && <Link href="/about" className={styles.navLink}>About</Link>}
+            {pathname !== '/services' && <Link href="/services" className={styles.navLink}>Services</Link>}
+            {pathname !== '/bookings' && <Link href="/bookings" className={styles.navLink}>Bookings</Link>}
+            {pathname !== '/testimonials' && <Link href="/testimonials" className={styles.navLink}>Testimonials</Link>}
+            {pathname !== '/contact' && <Link href="/contact" className={styles.navLink}>Contact</Link>}
           </nav>
 
           {/* CTA Buttons */}
@@ -66,12 +70,14 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.mobileNavOpen : ''}`}>
-          <Link href="/" className={styles.mobileNavLink} onClick={toggleMenu}>Home</Link>
-          <Link href="/about" className={styles.mobileNavLink} onClick={toggleMenu}>About</Link>
-          <Link href="/services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>
-          <Link href="/bookings" className={styles.mobileNavLink} onClick={toggleMenu}>Bookings</Link>
-          <Link href="/testimonials" className={styles.mobileNavLink} onClick={toggleMenu}>Testimonials</Link>
-          <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
+          {pathname !== '/' && (
+            <Link href="/" className={styles.mobileNavLink} onClick={toggleMenu}>Home</Link>
+          )}
+          {pathname !== '/about' && <Link href="/about" className={styles.mobileNavLink} onClick={toggleMenu}>About</Link>}
+          {pathname !== '/services' && <Link href="/services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>}
+          {pathname !== '/bookings' && <Link href="/bookings" className={styles.mobileNavLink} onClick={toggleMenu}>Bookings</Link>}
+          {pathname !== '/testimonials' && <Link href="/testimonials" className={styles.mobileNavLink} onClick={toggleMenu}>Testimonials</Link>}
+          {pathname !== '/contact' && <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>}
           
           <div className={styles.mobileCta}>
             <a 

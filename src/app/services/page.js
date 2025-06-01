@@ -12,43 +12,43 @@ export default function Services() {
       icon: "🔧",
       title: "Engine Diagnostics",
       description: "Advanced computer diagnostics to identify engine problems quickly and accurately. We use state-of-the-art equipment to pinpoint issues and provide detailed reports.",
-      features: ["OBD-II scanning", "Engine performance analysis", "Emission testing", "Fault code interpretation"]
+      features: ["OBD-II scanning", "Borescope inspection", "Fault code interpretation"]
     },
     {
       icon: "⚙️",
       title: "Diesel Repair",
-      description: "Specialized diesel engine repair and maintenance for trucks, buses, and heavy machinery. Our expertise covers all diesel systems and components.",
+      description: "Specialised diesel engine repair and maintenance for trucks, buses, and heavy machinery. Our expertise covers all diesel systems and components.",
       features: ["Fuel injection repair", "Turbocharger service", "Diesel engine rebuilds", "Emission system repair"]
     },
     {
       icon: "🏁",
       title: "Engine Tuning",
-      description: "Performance tuning and optimization to maximize your engine's potential. From economy tuning to performance enhancement.",
-      features: ["ECU remapping", "Performance chips", "Fuel efficiency optimization", "Power enhancement"]
+      description: "Performance tuning and optimisation to maximize your engine's potential. From economy tuning to performance enhancement.",
+      features: ["Fuel efficiency optimization", "Power enhancement", "Engine modification"]
     },
     {
       icon: "🔩",
       title: "Suspension Work",
       description: "Complete suspension system repair and maintenance to ensure a smooth, safe ride and proper vehicle handling.",
-      features: ["Shock absorber replacement", "Spring repair", "Alignment services", "Suspension diagnostics"]
+      features: ["Shock absorber replacement", "Spring repair", "Alignment services", "Suspension diagnostics", "Ride height modifications"]
     },
     {
-      icon: "🔋",
-      title: "Electrical Systems",
-      description: "Comprehensive electrical system diagnosis and repair, from simple battery issues to complex wiring problems.",
-      features: ["Battery testing", "Alternator repair", "Starter motor service", "Wiring diagnostics"]
+      icon: "🚘",
+      title: "Body Work and Replacement",
+      description: "Full bodywork services including dent removal, panel replacement, sanding, priming, and painting. We restore vehicles to their best condition after accidents, wear, or custom requests.",
+      features: ["Panel replacement", "Dent repair", "Sanding and priming", "Paint respray", "Rust treatment"]
     },
     {
       icon: "🛠️",
       title: "General Maintenance",
       description: "Regular maintenance services to keep your vehicle running smoothly and prevent costly repairs down the road.",
-      features: ["Oil changes", "Filter replacements", "Brake service", "Tire rotation"]
+      features: ["Oil changes", "Filter replacements", "Brake service", "Tyre rotation"]
     },
     {
       icon: "🚨",
       title: "Emergency Services",
       description: "24/7 emergency call-out services for breakdowns, urgent repairs, and vehicle recovery across Trinidad.",
-      features: ["Roadside assistance", "Jump starts", "Tire changes", "Emergency towing"]
+      features: ["Roadside assistance", "Jump starts", "Tyre changes", "Emergency towing"]
     },
     {
       icon: "🚛",
@@ -107,7 +107,7 @@ export default function Services() {
             </div>
             <div className={styles.benefitCard}>
               <h4>Quality Parts</h4>
-              <p>We use only high-quality parts and materials to ensure lasting repairs.</p>
+              <p>We use only high-quality used and new parts and to ensure lasting repairs at a fair price.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Fair Pricing</h4>
@@ -118,8 +118,8 @@ export default function Services() {
               <p>Efficient service to get you back on the road as quickly as possible.</p>
             </div>
             <div className={styles.benefitCard}>
-              <h4>Guaranteed Work</h4>
-              <p>All our work comes with a satisfaction guarantee for your peace of mind.</p>
+              <h4>Trusted Partners</h4>
+              <p>We partner with trusted machinists and bodywork experts to offer a full compliment of vehicular services.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Emergency Support</h4>
