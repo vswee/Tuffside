@@ -31,7 +31,12 @@ Use this checklist to ensure a successful deployment to Cloudflare Pages.
 - [ ] Page titles are descriptive and unique
 - [ ] Meta descriptions are compelling
 - [ ] Open Graph tags are configured
-- [ ] Favicon is properly set
+- [ ] OpenGraph image is set (`/public/images/og.png`)
+- [ ] Twitter Card image is configured
+- [ ] Favicon is properly set (`/public/images/favicon.png`)
+- [ ] Apple touch icon is configured
+- [ ] PWA manifest is included
+- [ ] Robots.txt is configured
 - [ ] Sitemap is generated (if needed)
 
 ## Deployment Steps
@@ -50,6 +55,9 @@ Use this checklist to ensure a successful deployment to Cloudflare Pages.
   - [ ] Build command: `npm run build`
   - [ ] Output directory: `out`
   - [ ] Node.js version: 18.x or later
+- [ ] Set compatibility flags:
+  - [ ] Add `nodejs_compat` to Production environment
+  - [ ] Add `nodejs_compat` to Preview environment
 - [ ] Add environment variables in Cloudflare dashboard
 - [ ] Trigger first deployment
 
@@ -66,7 +74,15 @@ Use this checklist to ensure a successful deployment to Cloudflare Pages.
 ### ✅ SEO and Analytics
 - [ ] Submit sitemap to Google Search Console
 - [ ] Verify Google Analytics tracking (if configured)
-- [ ] Test social media sharing
+- [ ] Test social media sharing:
+  - [ ] Facebook link preview
+  - [ ] Twitter card display
+  - [ ] LinkedIn post preview
+  - [ ] WhatsApp link preview
+- [ ] Validate OpenGraph with debugging tools:
+  - [ ] Facebook Sharing Debugger
+  - [ ] Twitter Card Validator
+  - [ ] LinkedIn Post Inspector
 - [ ] Check Core Web Vitals scores
 
 ### ✅ Security and Performance
@@ -97,6 +113,7 @@ Use this checklist to ensure a successful deployment to Cloudflare Pages.
 - **Images not loading**: Verify `images.unoptimized: true` in `next.config.mjs`
 - **Routing issues**: Check `_redirects` file and trailing slash configuration
 - **Environment variables not working**: Ensure they start with `NEXT_PUBLIC_`
+- **Node.js compatibility error**: Add `nodejs_compat` flag in Settings → Functions
 
 ### Support Resources
 - [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)

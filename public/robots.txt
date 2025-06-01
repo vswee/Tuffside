@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tuffside.com/sitemap.xml
+
+# Favicon
+Allow: /images/favicon.png
+Allow: /favicon.png
+Allow: /manifest.json

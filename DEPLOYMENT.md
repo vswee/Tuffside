@@ -38,7 +38,12 @@ This guide will help you deploy the Tuffside website to Cloudflare Pages.
    - **Build output directory**: `out`
    - **Root directory**: `/` (or leave empty)
 
-3. **Environment variables** (if needed):
+3. **Set compatibility flags:**
+   - Go to your project's Settings → Functions
+   - Add `nodejs_compat` to both Production and Preview compatibility flags
+   - This is required for Next.js applications on Cloudflare Pages
+
+4. **Environment variables** (if needed):
    - Add any environment variables from `.env.example`
    - Set `NODE_ENV=production`
 
@@ -95,6 +100,14 @@ The site is configured with:
 - Only `NEXT_PUBLIC_*` variables work in static export
 - Set variables in Cloudflare Pages dashboard
 - Rebuild after adding new variables
+
+### Node.js Compatibility Error
+If you see "no nodejs_compat compatibility flag set" error:
+1. Go to your Cloudflare Pages project dashboard
+2. Navigate to Settings → Functions
+3. Add `nodejs_compat` to both Production and Preview compatibility flags
+4. Redeploy your project
+5. Alternatively, ensure `wrangler.toml` includes `compatibility_flags = ["nodejs_compat"]`
 
 ## Monitoring and Analytics
 
