@@ -1,0 +1,29 @@
+# Cloudflare Pages Configuration for Tuffside Website
+name = "tuffside-website"
+compatibility_date = "2024-12-01"
+
+# Pages configuration
+[build]
+command = "npm run build"
+publish = "out"
+
+# Environment variables for production
+[env.production.vars]
+NODE_ENV = "production"
+
+# Environment variables for preview/staging
+[env.preview.vars]
+NODE_ENV = "development"
+
+# Custom headers and redirects are handled by _headers and _redirects files
+# in the public directory
+
+# Optional: Custom domain configuration
+# [[env.production.routes]]
+# pattern = "tuffside.com/*"
+# zone_name = "tuffside.com"
+
+# Optional: Preview domain configuration
+# [[env.preview.routes]]
+# pattern = "preview.tuffside.com/*"
+# zone_name = "tuffside.com"
