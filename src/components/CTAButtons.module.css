@@ -1,0 +1,48 @@
+.ctaContainer {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.default {
+  /* Default size - uses global btn styles */
+}
+
+.large {
+  /* Large size - uses btn-large class */
+}
+
+.small .btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .horizontal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .ctaContainer {
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaContainer .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

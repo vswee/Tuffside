@@ -1,0 +1,213 @@
+.bookingsPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--color-grey);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Booking Cards */
+.bookingCards {
+  padding: var(--spacing-2xl) 0;
+  background-color: #111111;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Booking Info */
+.bookingInfo {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-black);
+}
+
+.infoContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.infoText h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+}
+
+.stepsList li {
+  color: var(--color-grey);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: var(--spacing-xl);
+}
+
+.stepsList li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: var(--spacing-md);
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.stepsList li:last-child {
+  border-bottom: none;
+}
+
+.stepsList strong {
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.contactInfo {
+  background-color: #111111;
+  border: 2px solid var(--color-grey);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.contactInfo h3 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.contactInfo p {
+  color: var(--color-grey);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.contactOptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Emergency Section */
+.emergency {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-red), #b91c1c);
+  text-align: center;
+}
+
+.emergencyContent h2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.emergencyContent p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .infoContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .stepsList li {
+    padding-left: var(--spacing-lg);
+  }
+
+  .stepsList li::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .emergencyContent h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .contactInfo {
+    padding: var(--spacing-lg);
+  }
+
+  .stepsList li {
+    font-size: 1rem;
+    padding-left: var(--spacing-md);
+  }
+
+  .stepsList li::before {
+    position: relative;
+    margin-right: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .emergencyContent h2 {
+    font-size: 1.75rem;
+  }
+}

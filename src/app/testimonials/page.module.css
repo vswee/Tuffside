@@ -1,0 +1,305 @@
+.testimonialsPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--color-grey);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats {
+  padding: var(--spacing-xl) 0;
+  background-color: #111111;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.statCard {
+  background-color: var(--color-black);
+  border: 2px solid var(--color-red);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.statCard h3 {
+  font-size: 2.5rem;
+  color: var(--color-red);
+  margin-bottom: var(--spacing-xs);
+  font-weight: bold;
+}
+
+.statCard p {
+  color: var(--color-grey);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+}
+
+/* Testimonials Grid */
+.testimonials {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-black);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.testimonialCard {
+  background-color: #111111;
+  border: 2px solid var(--color-grey);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-red), #b91c1c);
+}
+
+.testimonialCard:hover {
+  border-color: var(--color-red);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.serviceTicket {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.ticketId {
+  font-family: 'Courier New', monospace;
+  color: var(--color-red);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.ticketDate {
+  color: var(--color-grey);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.rating {
+  color: #ffd700;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.cardContent {
+  margin-bottom: var(--spacing-lg);
+}
+
+.review {
+  color: var(--color-grey);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+}
+
+.review::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--color-red);
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  font-family: serif;
+  opacity: 0.5;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--spacing-md);
+}
+
+.customerInfo h4 {
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.125rem;
+}
+
+.vehicle {
+  color: var(--color-grey);
+  font-size: 0.875rem;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.location {
+  color: var(--color-red);
+  font-size: 0.75rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.serviceInfo {
+  text-align: right;
+}
+
+.serviceType {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* CTA Section */
+.cta {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-red), #b91c1c);
+  text-align: center;
+}
+
+.ctaContent h2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.ctaContent p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .testimonialCard {
+    padding: var(--spacing-lg);
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .serviceInfo {
+    text-align: left;
+    align-self: stretch;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .statCard {
+    padding: var(--spacing-md);
+  }
+
+  .statCard h3 {
+    font-size: 2rem;
+  }
+
+  .testimonialCard {
+    padding: var(--spacing-md);
+  }
+
+  .review {
+    font-size: 1rem;
+  }
+
+  .review::before {
+    font-size: 2rem;
+    top: -5px;
+    left: -15px;
+  }
+}

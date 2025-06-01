@@ -1,0 +1,199 @@
+.servicesPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--color-grey);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Services Grid */
+.servicesGrid {
+  padding: var(--spacing-2xl) 0;
+  background-color: #111111;
+}
+
+.serviceCard {
+  background-color: var(--color-black);
+  border: 2px solid var(--color-grey);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard:hover {
+  border-color: var(--color-red);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.serviceIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.serviceCard h3 {
+  color: var(--color-white);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.serviceDescription {
+  color: var(--color-grey);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.serviceFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceFeatures li {
+  color: var(--color-grey);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.3s ease;
+}
+
+.serviceFeatures li:hover {
+  color: var(--color-white);
+}
+
+.serviceFeatures li:last-child {
+  border-bottom: none;
+}
+
+/* Why Choose Section */
+.whyChoose {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-black);
+}
+
+.benefitCard {
+  background-color: #111111;
+  border: 1px solid var(--color-grey);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefitCard:hover {
+  border-color: var(--color-red);
+  background-color: rgba(220, 38, 38, 0.05);
+}
+
+.benefitCard h4 {
+  color: var(--color-red);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+.benefitCard p {
+  color: var(--color-grey);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-red), #b91c1c);
+  text-align: center;
+}
+
+.ctaContent h2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.ctaContent p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+
+  .serviceHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .serviceIcon {
+    font-size: 3rem;
+  }
+
+  .serviceCard {
+    padding: var(--spacing-lg);
+  }
+
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .serviceCard {
+    padding: var(--spacing-md);
+  }
+
+  .serviceHeader {
+    gap: var(--spacing-xs);
+  }
+
+  .serviceIcon {
+    font-size: 2.5rem;
+  }
+
+  .benefitCard {
+    padding: var(--spacing-md);
+  }
+}

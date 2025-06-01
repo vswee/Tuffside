@@ -1,0 +1,351 @@
+.contactPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--color-grey);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contact Information */
+.contactInfo {
+  padding: var(--spacing-2xl) 0;
+  background-color: #111111;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.contactDetails h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xl);
+}
+
+.contactItem {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-black);
+  border: 2px solid var(--color-grey);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+  border-color: var(--color-red);
+  transform: translateY(-2px);
+}
+
+.contactIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.contactText h3 {
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.25rem;
+}
+
+.contactText p {
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.contactLink {
+  color: var(--color-red);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--color-white);
+}
+
+.contactNote {
+  color: var(--color-grey);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.businessInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.hoursCard,
+.servicesCard {
+  background-color: var(--color-black);
+  border: 2px solid var(--color-red);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.hoursCard h3,
+.servicesCard h3 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.hourItem {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-grey);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hourItem:last-child {
+  border-bottom: none;
+}
+
+.emergencyNote {
+  color: var(--color-red);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  padding: var(--spacing-sm);
+  background-color: rgba(220, 38, 38, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.servicesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicesList li {
+  color: var(--color-grey);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.3s ease;
+}
+
+.servicesList li:hover {
+  color: var(--color-white);
+}
+
+.servicesList li:last-child {
+  border-bottom: none;
+}
+
+.servicesList li::before {
+  content: '✓ ';
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+/* Map Section */
+.mapSection {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-black);
+}
+
+.mapContainer {
+  margin-bottom: var(--spacing-xl);
+}
+
+.mapPlaceholder {
+  background: linear-gradient(135deg, #111111, #2a2a2a);
+  border: 2px solid var(--color-red);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapPlaceholder h3 {
+  color: var(--color-white);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.mapPlaceholder p {
+  color: var(--color-grey);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceAreas {
+  text-align: center;
+}
+
+.serviceAreas h4 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.areasList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.areasList span {
+  background-color: #111111;
+  color: var(--color-grey);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-grey);
+  transition: all 0.3s ease;
+}
+
+.areasList span:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+/* Emergency Section */
+.emergency {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-red), #b91c1c);
+  text-align: center;
+}
+
+.emergencyContent h2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.emergencyContent p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta {
+  padding: var(--spacing-2xl) 0;
+  background-color: #111111;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.ctaContent p {
+  color: var(--color-grey);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .contactItem {
+    padding: var(--spacing-md);
+  }
+
+  .hoursCard,
+  .servicesCard {
+    padding: var(--spacing-lg);
+  }
+
+  .mapPlaceholder {
+    padding: var(--spacing-xl);
+    min-height: 200px;
+  }
+
+  .emergencyContent h2 {
+    font-size: 2rem;
+  }
+
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .contactItem {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .contactIcon {
+    align-self: center;
+  }
+
+  .mapPlaceholder {
+    padding: var(--spacing-lg);
+  }
+
+  .mapPlaceholder h3 {
+    font-size: 1.5rem;
+  }
+
+  .areasList {
+    gap: var(--spacing-xs);
+  }
+
+  .areasList span {
+    font-size: 0.875rem;
+  }
+}
