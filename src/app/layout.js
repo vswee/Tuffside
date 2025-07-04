@@ -80,6 +80,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || 'https://tuffside.com'} />
       </head>
       <body className={`${inter.variable} ${mrDafoe.variable}`}>
+        <div id="fb-root"></div>
         <GoogleAnalytics />
         <Header />
         <main>{children}</main>

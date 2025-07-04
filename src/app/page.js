@@ -1,4 +1,5 @@
 import CTAButtons from '@/components/CTAButtons';
+import FacebookBentobox from '@/components/FacebookBentobox';
 import styles from './page.module.css';
 import Image from 'next/image'
 
@@ -57,6 +58,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Facebook Posts Bentobox */}
+      <FacebookBentobox />
 
       {/* Why Choose Us */}
       <section className={styles.whyChooseUs}>
