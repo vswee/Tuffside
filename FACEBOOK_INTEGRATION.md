@@ -1,14 +1,73 @@
 # Facebook Integration Documentation
 
 ## Overview
-The Tuffside website now includes a Facebook posts bentobox that automatically displays the latest posts from the Tuffside Facebook page. This integration uses Facebook's official Page Plugin for reliable, automatic updates.
+The Tuffside website now includes a Facebook posts bentobox component that will automatically display the latest posts from the Tuffside Facebook page once properly configured. This integration uses Facebook's official Page Plugin for reliable, automatic updates.
 
-## Implementation Details
+## ⚠️ Current Status: Setup Required
+
+### Issue Identified
+The Facebook Page Plugin is currently showing fallback text instead of posts because:
+
+1. **URL Format Issue**: The current Facebook page uses `profile.php?id=61576809067752` format
+2. **Page Plugin Requirement**: Facebook Page Plugin requires a custom username (like `facebook.com/tuffside`)
+3. **Business Page Needed**: The page must be configured as a Business Page, not a personal profile
 
 ### Facebook Page
-- **Page URL**: https://www.facebook.com/profile.php?id=61576809067752
+- **Current URL**: https://www.facebook.com/profile.php?id=61576809067752
+- **Required Format**: https://www.facebook.com/YOUR_CUSTOM_USERNAME
 - **Integration Method**: Facebook Page Plugin (official)
-- **Auto-updates**: Yes, posts update automatically
+- **Auto-updates**: Yes, once properly configured
+
+## 🔧 Required Setup Steps
+
+### Step 1: Create a Custom Username for Your Facebook Page
+
+1. **Go to your Facebook page** (https://www.facebook.com/profile.php?id=61576809067752)
+2. **Access Page Settings**:
+   - Click "Settings" in the left sidebar
+   - Select "Page Info" from the menu
+3. **Set Username**:
+   - Find the "Username" section
+   - Click "Edit" next to Username
+   - Choose a username like `tuffside`, `tuffsidegarage`, or `tuffsideautomotive`
+   - Click "Save Changes"
+
+**Result**: Your page URL will change from `facebook.com/profile.php?id=61576809067752` to `facebook.com/YOUR_USERNAME`
+
+### Step 2: Update the Website Code
+
+Once you have a custom username, update the Facebook integration:
+
+1. **Open**: `src/components/FacebookBentobox.js`
+2. **Find the commented section** (around line 100)
+3. **Uncomment the Facebook Page Plugin code**
+4. **Replace** `YOUR_CUSTOM_USERNAME` with your actual username
+5. **Comment out or remove** the setup instructions section
+
+**Example**:
+```javascript
+// Replace this:
+data-href="https://www.facebook.com/YOUR_CUSTOM_USERNAME"
+
+// With this (if your username is "tuffside"):
+data-href="https://www.facebook.com/tuffside"
+```
+
+### Step 3: Verify Page Settings
+
+Ensure your Facebook page is properly configured:
+
+- ✅ **Page Type**: Business Page (not personal profile)
+- ✅ **Privacy**: Public (visible to everyone)
+- ✅ **Posts**: Has recent posts to display
+- ✅ **Username**: Custom username is active
+
+### Step 4: Test the Integration
+
+1. **Deploy the updated code**
+2. **Visit your website**
+3. **Check the Facebook bentobox section**
+4. **Verify posts are loading automatically**
 
 ### Components Added
 

@@ -9,8 +9,16 @@ export default function FacebookBentobox() {
     if (window.FB) {
       window.FB.XFBML.parse();
     } else {
+      // Initialize Facebook SDK
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          xfbml: true,
+          version: 'v18.0'
+        });
+      };
+
       const script = document.createElement('script');
-      script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0';
+      script.src = 'https://connect.facebook.net/en_US/sdk.js';
       script.async = true;
       script.defer = true;
       script.crossOrigin = 'anonymous';
@@ -28,9 +36,13 @@ export default function FacebookBentobox() {
         
         <div className={styles.bentoboxContainer}>
           <div className={styles.facebookWidget}>
-            <div 
-              className="fb-page" 
-              data-href="https://www.facebook.com/profile.php?id=61576809067752"
+
+            
+            {/* UNCOMMENT THIS SECTION ONCE YOU HAVE A CUSTOM USERNAME: */}
+
+            <div
+              className="fb-page"
+              data-href="https://www.facebook.com/tuffsideautogarage"
               data-tabs="timeline"
               data-width="500"
               data-height="600"
@@ -39,15 +51,16 @@ export default function FacebookBentobox() {
               data-hide-cover="false"
               data-show-facepile="false"
             >
-              <blockquote 
-                cite="https://www.facebook.com/profile.php?id=61576809067752" 
+              <blockquote
+                cite="https://www.facebook.com/tuffsideautogarage"
                 className="fb-xfbml-parse-ignore"
               >
-                <a href="https://www.facebook.com/profile.php?id=61576809067752">
+                <a href="https://www.facebook.com/tuffsideautogarage">
                   Visit our Facebook page for the latest updates
                 </a>
               </blockquote>
             </div>
+           
           </div>
           
           <div className={styles.bentoboxSidebar}>
