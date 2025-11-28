@@ -63,8 +63,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const fontVariables = `${inter.variable} ${sora.variable} ${mrDafoe.variable}`;
+
   return (
-    <html lang="en">
+    <html lang="en" className={fontVariables}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ffffff" />
@@ -85,7 +87,7 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Tuffside Automotive Garage" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || 'https://tuffside.com'} />
       </head>
-      <body className={`${inter.variable} ${sora.variable} ${mrDafoe.variable}`}>
+      <body>
         <GoogleAnalytics />
         <Header />
         <main>{children}</main>
