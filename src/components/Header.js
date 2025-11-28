@@ -5,81 +5,73 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
+const NAV_ITEMS = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/bookings', label: 'Bookings' },
+  { href: '/contact', label: 'Contact' }
+];
+
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
-  const [visibleItems, setVisibleItems] = useState(5); // Start with all items visible
+  const [visibleItems, setVisibleItems] = useState(NAV_ITEMS.length);
   const [isMobile, setIsMobile] = useState(false);
-  const pathname = usePathname();
 
-  const navRef = useRef(null);
   const moreButtonRef = useRef(null);
   const moreMenuRef = useRef(null);
 
-  // Define all navigation items
-  const navItems = [
-    { href: '/about', label: 'About', show: pathname !== '/about' },
-    { href: '/services', label: 'Services', show: pathname !== '/services' },
-    { href: '/bookings', label: 'Bookings', show: pathname !== '/bookings' },
-    { href: '/testimonials', label: 'Testimonials', show: pathname !== '/testimonials' },
-    { href: '/contact', label: 'Contact', show: pathname !== '/contact' }
-  ].filter(item => item.show);
-
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   const toggleMoreMenu = () => {
-    setIsMoreMenuOpen(!isMoreMenuOpen);
+    setIsMoreMenuOpen((prev) => !prev);
   };
 
   const closeMoreMenu = () => {
     setIsMoreMenuOpen(false);
   };
 
-  // Handle window resize and mobile detection
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
       const mobile = windowWidth <= 768;
       setIsMobile(mobile);
 
-      if (!mobile) {
-        // Simple breakpoint-based approach for greedy navigation
-        let newVisibleItems = navItems.length;
-
-        if (windowWidth <= 1200 && windowWidth > 1000) {
-          newVisibleItems = Math.max(3, navItems.length - 2); // Hide last 2 items
-        } else if (windowWidth <= 1000 && windowWidth > 900) {
-          newVisibleItems = Math.max(2, navItems.length - 3); // Hide last 3 items
-        } else if (windowWidth <= 900 && windowWidth > 768) {
-          newVisibleItems = Math.max(1, navItems.length - 4); // Hide last 4 items
-        }
-
-        // Don't show "More" for just one item
-        if (navItems.length - newVisibleItems === 1) {
-          newVisibleItems = navItems.length;
-        }
-
-        setVisibleItems(newVisibleItems);
-      } else {
-        setVisibleItems(navItems.length);
+      if (mobile) {
+        setVisibleItems(NAV_ITEMS.length);
         setIsMoreMenuOpen(false);
+        return;
       }
+
+      let newVisibleItems = NAV_ITEMS.length;
+
+      if (windowWidth <= 1200 && windowWidth > 1024) {
+        newVisibleItems = Math.max(4, NAV_ITEMS.length - 2);
+      } else if (windowWidth <= 1024 && windowWidth > 900) {
+        newVisibleItems = Math.max(3, NAV_ITEMS.length - 3);
+      } else if (windowWidth <= 900 && windowWidth > 768) {
+        newVisibleItems = Math.max(2, NAV_ITEMS.length - 4);
+      }
+
+      if (NAV_ITEMS.length - newVisibleItems === 1) {
+        newVisibleItems = NAV_ITEMS.length;
+      }
+
+      setVisibleItems(newVisibleItems);
     };
 
-    // Initial calculation
     handleResize();
-
-    // Window resize listener
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [navItems, isMobile]);
+  }, []);
 
-  // Handle click outside to close more menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -101,7 +93,6 @@ export default function Header() {
     };
   }, [isMoreMenuOpen]);
 
-  // Handle keyboard navigation
   const handleMoreMenuKeyDown = (event) => {
     if (event.key === 'Escape') {
       setIsMoreMenuOpen(false);
@@ -120,27 +111,28 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.headerContent}>
-          {/* Logo */}
-          <Link href="/" className={styles.logo}>
-            <h1>Tuffside</h1>
+          <Link href="/" className={styles.logo} aria-label="Tuffside Automotive Garage home">
+            <span className={styles.wordmark}>Tuffside</span>
             <span className={styles.tagline}>Automotive Garage</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className={styles.nav} ref={navRef}>
-            {/* Visible navigation items */}
-            {navItems.slice(0, visibleItems).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={styles.navLink}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className={styles.nav} aria-label="Primary navigation">
+            {NAV_ITEMS.slice(0, visibleItems).map((item) => {
+              const isActive = pathname === item.href;
 
-            {/* More dropdown button - only show if there are hidden items and not mobile */}
-            {!isMobile && visibleItems < navItems.length && (
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            {!isMobile && visibleItems < NAV_ITEMS.length && (
               <div className={styles.moreDropdown}>
                 <button
                   ref={moreButtonRef}
@@ -159,11 +151,10 @@ export default function Header() {
                     viewBox="0 0 16 16"
                     fill="currentColor"
                   >
-                    <path d="M8 12l-4-4h8l-4 4z"/>
+                    <path d="M8 12l-4-4h8l-4 4z" />
                   </svg>
                 </button>
 
-                {/* Dropdown menu */}
                 {isMoreMenuOpen && (
                   <div
                     ref={moreMenuRef}
@@ -172,13 +163,14 @@ export default function Header() {
                     role="menu"
                     aria-label="Additional navigation options"
                   >
-                    {navItems.slice(visibleItems).map((item) => (
+                    {NAV_ITEMS.slice(visibleItems).map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         className={styles.moreMenuItem}
                         onClick={closeMoreMenu}
                         role="menuitem"
+                        aria-current={pathname === item.href ? 'page' : undefined}
                       >
                         {item.label}
                       </Link>
@@ -189,7 +181,6 @@ export default function Header() {
             )}
           </nav>
 
-          {/* CTA Buttons */}
           <div className={styles.ctaButtons}>
             <a
               href="tel:+18683357440"
@@ -209,12 +200,12 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className={styles.mobileMenuButton}
             onClick={toggleMenu}
             aria-label="Toggle mobile menu"
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
           >
             <span className={styles.hamburger}></span>
             <span className={styles.hamburger}></span>
@@ -222,16 +213,22 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.mobileNavOpen : ''}`}>
-          {pathname !== '/' && (
-            <Link href="/" className={styles.mobileNavLink} onClick={toggleMenu}>Home</Link>
-          )}
-          {pathname !== '/about' && <Link href="/about" className={styles.mobileNavLink} onClick={toggleMenu}>About</Link>}
-          {pathname !== '/services' && <Link href="/services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>}
-          {pathname !== '/bookings' && <Link href="/bookings" className={styles.mobileNavLink} onClick={toggleMenu}>Bookings</Link>}
-          {pathname !== '/testimonials' && <Link href="/testimonials" className={styles.mobileNavLink} onClick={toggleMenu}>Testimonials</Link>}
-          {pathname !== '/contact' && <Link href="/contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>}
+        <nav
+          id="mobile-nav"
+          className={`${styles.mobileNav} ${isMenuOpen ? styles.mobileNavOpen : ''}`}
+          aria-label="Mobile navigation"
+        >
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${styles.mobileNavLink} ${pathname === item.href ? styles.mobileNavLinkActive : ''}`}
+              onClick={toggleMenu}
+              aria-current={pathname === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
 
           <div className={styles.mobileCta}>
             <a

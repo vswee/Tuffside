@@ -6,6 +6,12 @@ export const metadata = {
   description: "Complete automotive services including engine diagnostics, diesel repair, engine tuning, suspension work, and emergency services in Trinidad.",
 };
 
+const serviceHighlights = [
+  'Live diagnostic reports with photos and estimates.',
+  'OEM and motorsport-grade tooling under one roof.',
+  'Flexible scheduling for fleets and commercial vehicles.'
+];
+
 export default function Services() {
   const services = [
     {
@@ -60,26 +66,32 @@ export default function Services() {
 
   return (
     <div className={styles.servicesPage}>
-      {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
-            <h1>Our Services</h1>
-            <p className={styles.heroDescription}>
-              Comprehensive automotive repair and maintenance services designed to keep 
-              your vehicle running at its best. From routine maintenance to complex repairs, 
-              we've got you covered.
-            </p>
+            <div>
+              <p className={styles.heroKicker}>Services</p>
+              <h1>Our Services</h1>
+              <p className={styles.heroDescription}>
+                Comprehensive automotive repair and maintenance packages designed to keep your vehicle running at
+                its best. From routine servicing to complex rebuilds, we handle it in-house with transparent
+                updates.
+              </p>
+            </div>
+            <ul className={styles.heroHighlights}>
+              {serviceHighlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
       <section className={styles.servicesGrid}>
         <div className="container">
-          <div className="grid grid-2">
+          <div className={styles.serviceList}>
             {services.map((service, index) => (
-              <div key={index} className={styles.serviceCard}>
+              <article key={index} className={styles.serviceCard}>
                 <div className={styles.serviceHeader}>
                   <div className={styles.serviceIcon}>{service.icon}</div>
                   <h3>{service.title}</h3>
@@ -87,56 +99,62 @@ export default function Services() {
                 <p className={styles.serviceDescription}>{service.description}</p>
                 <ul className={styles.serviceFeatures}>
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>✓ {feature}</li>
+                    <li key={featureIndex}>{feature}</li>
                   ))}
                 </ul>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Our Services */}
       <section className={styles.whyChoose}>
         <div className="container">
-          <h2 className="text-center mb-lg">Why Choose Our Services?</h2>
-          <div className="grid grid-3">
+          <div className={styles.sectionHeader}>
+            <p className={styles.sectionKicker}>Why choose our shop</p>
+            <h2>Backed by data, driven by relationships.</h2>
+            <p>
+              We combine a race-and-rally mindset with approachable service, so you get transparent updates and
+              reliable turnaround times.
+            </p>
+          </div>
+          <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
               <h4>Expert Technicians</h4>
-              <p>Our certified mechanics have years of experience working on all makes and models.</p>
+              <p>Certified mechanics with hands-on experience on every major platform.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Quality Parts</h4>
-              <p>We use only high-quality used and new parts and to ensure lasting repairs at a fair price.</p>
+              <p>OEM, performance, and trusted aftermarket partners for every budget.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Fair Pricing</h4>
-              <p>Transparent, competitive pricing with no hidden fees or surprises.</p>
+              <p>Line-item quotes and approvals before any major work begins.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Quick Service</h4>
-              <p>Efficient service to get you back on the road as quickly as possible.</p>
+              <p>Priority scheduling and pick-up options keep you moving.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Trusted Partners</h4>
-              <p>We partner with trusted machinists and bodywork experts to offer a full compliment of vehicular services.</p>
+              <p>Access to machinists, bodywork experts, and paint specialists we trust.</p>
             </div>
             <div className={styles.benefitCard}>
               <h4>Emergency Support</h4>
-              <p>24/7 emergency services when you need help the most.</p>
+              <p>On-call technicians ready for roadside diagnostics and recovery.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
       <section className={styles.cta}>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2>Ready to Service Your Vehicle?</h2>
+            <p className={styles.sectionKicker}>Ready when you are</p>
+            <h2>Book a service or request a quote.</h2>
             <p>
-              Don't wait for small problems to become big ones. Contact us today to 
-              schedule your service or get a free quote.
+              Do not wait for small problems to become big ones. Contact us today to schedule service or ask for a
+              custom estimate.
             </p>
             <CTAButtons layout="horizontal" size="large" />
           </div>

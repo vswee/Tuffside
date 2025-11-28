@@ -1,4 +1,4 @@
-import { Inter, Mr_Dafoe } from "next/font/google";
+import { Inter, Mr_Dafoe, Sora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +7,12 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const mrDafoe = Mr_Dafoe({
@@ -79,7 +85,7 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Tuffside Automotive Garage" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || 'https://tuffside.com'} />
       </head>
-      <body className={`${inter.variable} ${mrDafoe.variable}`}>
+      <body className={`${inter.variable} ${sora.variable} ${mrDafoe.variable}`}>
         <GoogleAnalytics />
         <Header />
         <main>{children}</main>

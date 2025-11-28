@@ -10,12 +10,10 @@
 /services /services/ 301
 /contact /contact/ 301
 /bookings /bookings/ 301
-/testimonials /testimonials/ 301
 
 # Redirect common misspellings or alternative URLs
 /service /services/ 301
 /booking /bookings/ 301
-/testimonial /testimonials/ 301
 
 # Handle www redirects (uncomment and modify as needed)
 # https://www.tuffside.com/* https://tuffside.com/:splat 301!
