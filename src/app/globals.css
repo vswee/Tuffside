@@ -59,6 +59,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p,
+ul,
+ol,
+li,
+span,
+small,
+label,
+a,
+button,
+input,
+textarea {
+  font-family: var(--font-body);
+}
+
 main {
   display: block;
 }
